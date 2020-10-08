@@ -1,5 +1,5 @@
 import React from "react";
-//import "./modal.css"
+import "../modal.css"
 
 class Modal extends React.Component{
     render(){
@@ -9,8 +9,16 @@ class Modal extends React.Component{
 
         return (
             <div className="confirmation-modal">
-                Modal Here
+            <div className="modal-content">
+                <button className="close" onClick={this.props.closeModal}> {/* Eventually add an onClick attribute here to close the modal */ }
+                    &times;
+                </button>
+                <div className="text-center">
+                    <h1>Modal Works</h1>
+                
+                </div>
             </div>
+        </div>
         )
     }
 }

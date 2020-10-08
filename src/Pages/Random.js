@@ -9,11 +9,18 @@ class Random extends React.Component{
             isModal: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleClick(){
         this.setState({
             isModal: true
+        })
+    }
+
+    closeModal(){
+        this.setState({
+            isModal: false
         })
     }
 
@@ -26,8 +33,8 @@ class Random extends React.Component{
                 <div className="container">
                     Favorites Go here
                 </div>
-                <Modal isModal={this.state.isModal}/>
-                <button onClick={handleClick} className="btn btn-danger">Test</button>
+                <Modal isModal={this.state.isModal} closeModal={this.closeModal} />
+                <button onClick={this.handleClick} className="btn btn-danger">Test</button>
             </div>
         )
     }
