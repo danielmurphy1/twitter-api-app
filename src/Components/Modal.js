@@ -1,5 +1,6 @@
 import React from "react";
-import "../modal.css"
+import "../css/modal.css"
+import TweetCard from './TweetCard';
 
 class Modal extends React.Component{
     render(){
@@ -14,8 +15,7 @@ class Modal extends React.Component{
                     &times;
                 </button>
                 <div className="text-center">
-                    <h1>Modal Works</h1>
-                
+                    <TweetCard />
                 </div>
             </div>
         </div>
