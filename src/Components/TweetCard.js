@@ -12,7 +12,7 @@ class TweetCard extends React.Component {
                 <div className="card-body">
                     <div className="card-title">
                         <div>
-                            <img src={require ("C:/Users/danie/Documents/twitter-api-app/src/images/test1.jpg")}
+                            <img src={require ("../images/test1.jpg")} alt="test"
                             className="img-fluid rounded-circle" style={{height: 100}}></img>
                             
                             <p>Dan Murphy @LupeSanchez</p>
