@@ -20,9 +20,24 @@ app.get("/api/tweetsearch", (req, res) =>{
     })
         .then((response) => {
             res.send(response.data);
+            console.log(response.data)
         })
 });
 
+app.get("/api/usersearch", (req, res) =>{
+    console.log("usersearch")
+    //res.send("Hello");
+    axios.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=santaclaus&count=5", {
+        headers:{
+            "Content-type": "application/json", 
+            "Accept": "application/json", 
+            "Authorization": "Bearer" + " " + "AAAAAAAAAAAAAAAAAAAAADQoIgEAAAAAy6zzchbqvwvhN2rAv8OjfwBMxeY%3DTjVDGcXCkrGtUXCvFDQZRVmgq5Tg2ZScnPQ1Zx3kY6Opwk6Q7i"
+        }
+    })
+        .then((response) => {
+            res.send(response.data);
+        })
+});
 
 // app.get("/", (req, res) => {
 //     res.send("Working")
