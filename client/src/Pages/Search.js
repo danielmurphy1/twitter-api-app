@@ -6,6 +6,17 @@ class Search extends React.Component{
     constructor(){
         super();
     }
+
+    async componentDidMount(){
+        const tweet = await fetch("/api/tweetsearch")
+            .then(res => res.json());
+        console.log(tweet);
+        const user = await fetch("/api/usersearch")
+            .then(res => res.json());
+        console.log(user);
+    }
+
+
     render(){
         return(
             <div className="container col-6">

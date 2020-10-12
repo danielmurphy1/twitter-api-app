@@ -29,7 +29,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".confirmation-modal {\n    display: block;\n    position: fixed; \n    z-index: 1; \n    left: 0;\n    top: 0;\n    width: 100%; \n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0); \n    background-color: rgba(0,0,0,0.4);\n    \n  }\n  \n  .modal-content {\n    background-color: #fefefe;\n    margin: 15% auto; \n    padding: 20px;\n    border: 1px solid #888;\n    width: 80%; \n  }\n  \n  .close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n  }\n  \n  .close:hover,\n  .close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n  }", ""]);
+exports.push([module.i, ".confirmation-modal {\r\n    display: block;\r\n    position: fixed; \r\n    z-index: 1; \r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; \r\n    height: 100%; \r\n    overflow: auto; \r\n    background-color: rgb(0,0,0); \r\n    background-color: rgba(0,0,0,0.4);\r\n    \r\n  }\r\n  \r\n  .modal-content {\r\n    background-color: #fefefe;\r\n    margin: 15% auto; \r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%; \r\n  }\r\n  \r\n  .close {\r\n    color: #aaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n  }\r\n  \r\n  .close:hover,\r\n  .close:focus {\r\n    color: black;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }", ""]);
 // Exports
 module.exports = exports;
 
@@ -47,7 +47,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "p{\n    font-size: 1rem;\n    display: inline;\n}", ""]);
+exports.push([module.i, "p{\r\n    font-size: 1rem;\r\n    display: inline;\r\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -676,13 +676,20 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     super();
   }
 
+  async componentDidMount() {
+    const tweet = await fetch("/api/tweetsearch").then(res => res.json());
+    console.log(tweet);
+    const user = await fetch("/api/usersearch").then(res => res.json());
+    console.log(user);
+  }
+
   render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "container col-6",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 22,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -690,21 +697,21 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 23,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 24,
         columnNumber: 21
       }
     }, "Search Tweets by User or Content")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 26,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -712,7 +719,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 27,
         columnNumber: 21
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -722,7 +729,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 28,
         columnNumber: 25
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -730,7 +737,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 29,
         columnNumber: 25
       }
     }, "Search User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -738,7 +745,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 30,
         columnNumber: 25
       }
     }, "Search Content"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -746,14 +753,14 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 33,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 34,
         columnNumber: 21
       }
     })));
@@ -1035,5 +1042,5 @@ module.exports = __webpack_require__(/*! C:\Users\danie\Documents\twitter-api-ap
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
