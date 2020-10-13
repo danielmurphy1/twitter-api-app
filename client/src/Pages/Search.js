@@ -32,18 +32,11 @@ class Search extends React.Component{
         const datesArray = [];
         const content = await fetch("/api/tweet/search")
             .then(res => res.json());
-        console.log(content.statuses[0].created_at);
-        //const createdAtArray = content.statuses[0].created_at.split(" ")
-        // console.log(createdAtArray)
-        // const dates = createdAtArray.slice(1,3)
-        // dates.push(createdAtArray[5]);
-        // console.log(dates)
-        // const dateString = dates.join(" ");
-        // console.log(dateString)
-        // const times = createdAtArray.slice(3,4);
-        // console.log(times.join())
-        // console.log(times)
 
+
+        //for testing    
+        console.log(content.statuses[0].created_at);
+        
         
         for (const tweetData of content.statuses) {
             
@@ -75,15 +68,13 @@ class Search extends React.Component{
             
             
         }
-
+        console.log(this.state)
         const user = await fetch("/api/user/search")
             .then(res => res.json());
         console.log(user);
         
     }
     
-    
-
     handleChange(event){
         const {name, value} = event.target;
         this.setState({
