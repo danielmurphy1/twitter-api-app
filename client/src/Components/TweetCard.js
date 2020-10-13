@@ -24,7 +24,12 @@ class TweetCard extends React.Component {
                     <div>
                         <p>Date Placeholder </p>
                         <p>Time Placeholder</p>
-                        <div>Likes and Retweets</div>
+                        <div>
+                            <img src={require("../images/heart-icon.png")} alt="heart" className="img-fluid number-ref" />
+                            <p>0</p>
+                            <img src={require("../images/retweet-icon.png")} alt="heart" className="img-fluid number-ref" />
+                            <p>0</p>
+                        </div>
                     </div>
                 </div>
             </div>

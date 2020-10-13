@@ -8,10 +8,10 @@ app.use("/", express.static(path.join(__dirname, "client/build")));
 app.use("/search", express.static(path.join(__dirname, "client/build")));
 app.use("/random", express.static(path.join(__dirname, "client/build")));
 
-app.get("/api/tweetsearch", (req, res) =>{
+app.get("/api/tweet/search", (req, res) =>{
     console.log("tweetsearch")
     //res.send("Hello");
-    axios.get("https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular", {
+    axios.get("https://api.twitter.com/1.1/search/tweets.json?q=ps5&result_type=popular", {
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
@@ -24,7 +24,7 @@ app.get("/api/tweetsearch", (req, res) =>{
         })
 });
 
-app.get("/api/usersearch", (req, res) =>{
+app.get("/api/user/search", (req, res) =>{
     console.log("usersearch")
     //res.send("Hello");
     axios.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=santaclaus&count=5", {

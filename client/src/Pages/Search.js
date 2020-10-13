@@ -5,15 +5,29 @@ import TweetCard from '../Components/TweetCard'
 class Search extends React.Component{
     constructor(){
         super();
+        this.state={
+            name: "", 
+            userName: "", 
+            profileImage: "",
+            rewteetCount: 0, 
+            likesCount: 0, 
+            date: "", 
+            time: "", 
+            tweetText: ""
+        }
     }
 
     async componentDidMount(){
-        const tweet = await fetch("/api/tweetsearch")
+        const content = await fetch("/api/tweet/search")
             .then(res => res.json());
-        console.log(tweet);
-        const user = await fetch("/api/usersearch")
+        console.log(content.statuses);
+        
+        
+
+        const user = await fetch("/api/user/search")
             .then(res => res.json());
         console.log(user);
+        
     }
 
 
