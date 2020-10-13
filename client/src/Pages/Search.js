@@ -12,8 +12,8 @@ class Search extends React.Component{
             image: [],
             retweetCount: [], 
             likesCount: [], 
-            date: "", 
-            time: "", 
+            date: [], 
+            time: [], 
             tweetText: [], 
             searchText: ""
         }
@@ -28,9 +28,22 @@ class Search extends React.Component{
         const tweetTextArray =[];
         const retweetCountArray=[];
         const likesCountArray=[];
+        const timesArray = [];
+        const datesArray = [];
         const content = await fetch("/api/tweet/search")
             .then(res => res.json());
-        console.log(content.statuses[0].favorite_count);
+        console.log(content.statuses[0].created_at);
+        //const createdAtArray = content.statuses[0].created_at.split(" ")
+        // console.log(createdAtArray)
+        // const dates = createdAtArray.slice(1,3)
+        // dates.push(createdAtArray[5]);
+        // console.log(dates)
+        // const dateString = dates.join(" ");
+        // console.log(dateString)
+        // const times = createdAtArray.slice(3,4);
+        // console.log(times.join())
+        // console.log(times)
+
         
         for (const tweetData of content.statuses) {
             
@@ -40,14 +53,26 @@ class Search extends React.Component{
             tweetTextArray.push(tweetData.text);
             retweetCountArray.push(tweetData.retweet_count);
             likesCountArray.push(tweetData.favorite_count);
+            let createdAtArray = tweetData.created_at.split(" ");
+            let date = createdAtArray.slice(1,3);
+            date.push(createdAtArray[5]);
+            let dateString = date.join(" ");
+            datesArray.push(dateString);
+            let time = createdAtArray.slice(3,4);
+            let timeString = time.join();
+            timesArray.push(timeString);
+
             this.setState({
                 user: usersArray, 
                 screenName: screenNameArray,
                 image: profileImageArray,
                 tweetText: tweetTextArray,
                 retweetCount: retweetCountArray, 
-                likesCount: likesCountArray
+                likesCount: likesCountArray,
+                date: datesArray,
+                time: timesArray
             })
+            
             
         }
 
@@ -88,6 +113,8 @@ class Search extends React.Component{
                             tweetText={this.state.tweetText[i]}
                             retweetCount={this.state.retweetCount[i]}
                             likesCount={this.state.likesCount[i]}
+                            date={this.state.date[i]}
+                            time={this.state.time[i]}
                             />
                     })}
                     

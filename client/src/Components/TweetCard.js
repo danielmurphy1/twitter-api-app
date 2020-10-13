@@ -12,7 +12,7 @@ class TweetCard extends React.Component {
                     <div className="card-body">
                         <div className="card-title">
                             <div>
-                                <img src={this.props.image} alt="test"
+                                <img src={this.props.image} alt="profile-image"
                                 className="img-fluid rounded-circle" style={{height: 100}}></img>
                                 
                                 <p>{this.props.user}</p> 
@@ -24,12 +24,13 @@ class TweetCard extends React.Component {
                     </div>
                     <div className="card-footer">
                         <div>
-                            <p>Date Placeholder </p>
-                            <p>Time Placeholder</p>
+                            <p>{this.props.date}</p>
+                            <br/>
+                            <p>{this.props.time}</p>
                             <div>
                                 <img src={require("../images/heart-icon.png")} alt="heart" className="img-fluid number-ref" />
                                 <p>{this.props.likesCount}</p>
-                                <img src={require("../images/retweet-icon.png")} alt="heart" className="img-fluid number-ref" />
+                                <img src={require("../images/retweet-icon.png")} alt="retweet" className="img-fluid number-ref" />
                                 <p>{this.props.retweetCount}</p>
                             </div>
                         </div>
