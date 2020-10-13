@@ -10,8 +10,9 @@ app.use("/random", express.static(path.join(__dirname, "client/build")));
 
 app.get("/api/tweet/search", (req, res) =>{
     console.log("tweetsearch")
+    const searchText = req.body.searchText;
     //res.send("Hello");
-    axios.get("https://api.twitter.com/1.1/search/tweets.json?q=ps5&result_type=popular", {
+    axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchText}&result_type=popular`, {
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
