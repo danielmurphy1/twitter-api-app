@@ -80,60 +80,65 @@ class Search extends React.Component{
     async handleContentSearch(event){
         event.preventDefault();
 
-        const searchObject ={
-            searchText: this.state.searchText
-        }
-        Axios.post("/api/tweet/search", searchObject)
+        // const searchObject ={
+        //     searchText: this.state.searchText
+        // }
+        console.log(this.state.searchText)
+        Axios.get(`/api/tweet/search?searchText=${this.state.searchText}`)
         //console.log(searchObject)
             .then((res) =>{
                 console.log(res.data)
             })
-            const usersArray =[];
-            const screenNameArray =[];
-            const profileImageArray =[];
-            const tweetTextArray =[];
-            const retweetCountArray=[];
-            const likesCountArray=[];
-            const timesArray = [];
-            const datesArray = [];
-            const content = await fetch("/api/tweet/search")
-                .then(res => res.json());
-    
-    
-            //for testing    
-            console.log(content.statuses[0].created_at);
+        const usersArray =[];
+        const screenNameArray =[];
+        const profileImageArray =[];
+        const tweetTextArray =[];
+        const retweetCountArray=[];
+        const likesCountArray=[];
+        const timesArray = [];
+        const datesArray = [];
+            
+        const content = await fetch(`/api/tweet/search?searchText=${this.state.searchText}`)
+            .then(res => res.json());
+
+
+        //for testing    
+        console.log(content.statuses);
             
             
-            for (const tweetData of content.statuses) {
-                
-                usersArray.push(tweetData.user.name);
-                screenNameArray.push(tweetData.user.screen_name);
-                profileImageArray.push(tweetData.user.profile_image_url_https);
-                tweetTextArray.push(tweetData.text);
-                retweetCountArray.push(tweetData.retweet_count);
-                likesCountArray.push(tweetData.favorite_count);
-                let createdAtArray = tweetData.created_at.split(" ");
-                let date = createdAtArray.slice(1,3);
-                date.push(createdAtArray[5]);
-                let dateString = date.join(" ");
-                datesArray.push(dateString);
-                let time = createdAtArray.slice(3,4);
-                let timeString = time.join();
-                timesArray.push(timeString);
-    
-                this.setState({
-                    user: usersArray, 
-                    screenName: screenNameArray,
-                    image: profileImageArray,
-                    tweetText: tweetTextArray,
-                    retweetCount: retweetCountArray, 
-                    likesCount: likesCountArray,
-                    date: datesArray,
-                    time: timesArray
-                })
-                
-                
-            }
+        for (const tweetData of content.statuses) {
+            
+            usersArray.push(tweetData.user.name);
+            screenNameArray.push(tweetData.user.screen_name);
+            profileImageArray.push(tweetData.user.profile_image_url_https);
+            tweetTextArray.push(tweetData.text);
+            retweetCountArray.push(tweetData.retweet_count);
+            likesCountArray.push(tweetData.favorite_count);
+            let createdAtArray = tweetData.created_at.split(" ");
+            let date = createdAtArray.slice(1,3);
+            date.push(createdAtArray[5]);
+            let dateString = date.join(" ");
+            datesArray.push(dateString);
+            let time = createdAtArray.slice(3,4);
+            let timeString = time.join();
+            timesArray.push(timeString);
+
+            this.setState({
+                user: usersArray, 
+                screenName: screenNameArray,
+                image: profileImageArray,
+                tweetText: tweetTextArray,
+                retweetCount: retweetCountArray, 
+                likesCount: likesCountArray,
+                date: datesArray,
+                time: timesArray
+            })
+            
+            
+        }
+        this.setState({
+            searchText: ""
+        })
         
     }
     
