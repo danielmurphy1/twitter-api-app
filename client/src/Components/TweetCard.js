@@ -13,7 +13,7 @@ class TweetCard extends React.Component {
                         <div className="card-title">
                             <div>
                                 <img src={this.props.image} alt="profile-image"
-                                className="img-fluid rounded-circle" style={{height: 100}}></img>
+                                className="img-fluid rounded-circle" style={{height: 60}}></img>
                                 
                                 <p>{this.props.user}</p> 
                                 <br/>

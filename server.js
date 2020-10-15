@@ -13,7 +13,7 @@ app.get("/api/tweet/search", (req, res) =>{
     const searchText = req.query.searchText;
     //res.send("Hello");
     console.log(searchText)
-    axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchText}&result_type=popular`, {
+    axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchText}&result_type=popular&tweet_mode=extended`, {
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
@@ -28,8 +28,9 @@ app.get("/api/tweet/search", (req, res) =>{
 
 app.get("/api/user/search", (req, res) =>{
     console.log("usersearch")
+    const searchText = req.query.searchText;
     //res.send("Hello");
-    axios.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=jesus&count=5", {
+    axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${searchText}&count=5&tweet_mode=extended`, {
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
@@ -40,52 +41,7 @@ app.get("/api/user/search", (req, res) =>{
             res.send(response.data);
         })
 });
-
-// app.get("/", (req, res) => {
-//     res.send("Working")
-// })
-
-// async function getTwitterContent(){
-//     const response = await fetch("https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular")
-//     .then(res => res.json());
-//     console.log(response);
-// }
-// getTwitterContent();
-
-// async function getTwitterContent(){
-//     const response = await fetch("https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular")
-//     const data = await response.json()
-//     console.log(data);
-// }
-// getTwitterContent();
-
-// app.get("https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular", (req, res)=>{
-    
-// })
-
-
-// const url = "https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular";
-// const bearer = 'Bearer ' + 
-// "AAAAAAAAAAAAAAAAAAAAADQoIgEAAAAAy6zzchbqvwvhN2rAv8OjfwBMxeY%3DTjVDGcXCkrGtUXCvFDQZRVmgq5Tg2ZScnPQ1Zx3kY6Opwk6Q7i";
-// fetch(url, {
-//         method: 'GET',
-//         withCredentials: true,
-//         credentials: 'include',
-//         headers: {
-//             'Authorization': bearer,
-//             'X-FP-API-KEY': 'iphone', //it can be iPhone or your any other attribute
-//             'Content-Type': 'application/json'
-//         }
-//     }).then(responseJson => {
-//         let items = JSON.parse(responseJson._bodyInit);
-//         console.log(items);
-//     })
-//     .catch(error => this.setState({
-//         isLoading: false,
-//         message: 'Something bad happened ' + error
-//     }));
-    
-    
+ 
 app.listen(port, () =>{
     console.log(`listening on port ${port}`);
 })
