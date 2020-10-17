@@ -8,7 +8,8 @@ class Random extends React.Component{
     constructor(){
         super();
         this.state = {
-            isModal: false
+            isModal: false,
+            userName: ""
         }
         this.handleClick = this.handleClick.bind(this);
         this.closeModal = this.closeModal.bind(this);
