@@ -28,13 +28,6 @@ class Random extends React.Component{
     }
 
     render(){
-        //create array of objects for 5 favorites
-        //in the container div, map over the array to generate 5 cards dynamically
-        console.log(randomData[0].userName)
-        // const data =[];
-        // for(let i =1; i <=5; i++){
-        //     data.push(i);
-        // }
         return(
             
             <div className="container">
