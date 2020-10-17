@@ -13,4 +13,4 @@ function SearchForm(props){
 }
 
 
-export default SearchForm
+export default SearchForm;
