@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import Modal from '../Components/Modal';
 import RandomCard from '../Components/RandomCard';
+import randomData from '../Components/RandomCardData';
 
 class Random extends React.Component{
     constructor(){
@@ -16,6 +17,7 @@ class Random extends React.Component{
     handleClick(){
         this.setState({
             isModal: true
+            
         })
     }
 
@@ -28,7 +30,9 @@ class Random extends React.Component{
     render(){
         //create array of objects for 5 favorites
         //in the container div, map over the array to generate 5 cards dynamically
+        console.log(randomData[0].userName)
         return(
+            
             <div className="container">
                 <div className="container text-center text-box">
                     <h4>Choose One of My Favorite Users to Get One of Their Random Tweets</h4>
