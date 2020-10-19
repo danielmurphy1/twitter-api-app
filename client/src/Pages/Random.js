@@ -32,7 +32,7 @@ class Random extends React.Component{
             screenName: userName,
         })
        
-        const content = await fetch(`/api/user/search?searchText=${this.state.searchText}`)
+        const content = await fetch(`/api/user/search?searchText=${userName}`)
             .then(res => res.json());
         // console.log("card Clicked")
         // console.log(this.state.userName)
