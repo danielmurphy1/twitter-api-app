@@ -11,11 +11,20 @@ class Modal extends React.Component{
         return (
             <div className="confirmation-modal">
             <div className="modal-content">
-                <button className="close" onClick={this.props.closeModal}> {/* Eventually add an onClick attribute here to close the modal */ }
+                <button className="close" onClick={this.props.closeModal}>
                     &times;
                 </button>
                 <div className="text-center">
-                    <TweetCard />
+                    <TweetCard 
+                        image={this.props.image}
+                        user={this.props.user}
+                        screenName={this.props.screenName}
+                        tweetText={this.props.tweetText}
+                        date={this.props.date}
+                        time={this.props.time}
+                        likesCount={this.props.likesCount}
+                        retweetCount={this.props.retweetCount}
+                    />
                 </div>
             </div>
         </div>
