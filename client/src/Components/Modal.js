@@ -24,6 +24,7 @@ class Modal extends React.Component{
                         time={this.props.time}
                         likesCount={this.props.likesCount}
                         retweetCount={this.props.retweetCount}
+                        media={this.props.media}
                     />
                 </div>
             </div>

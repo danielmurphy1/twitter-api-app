@@ -17,10 +17,13 @@ class TweetCard extends React.Component {
                                 
                                 <p>{this.props.user}</p> 
                                 <br/>
-                                <p>@{this.props.screenName}</p>
+                                <p><a href={`https://www.twitter.com/${this.props.screenName}`} target="_blank">@{this.props.screenName}</a></p>
                             </div>
                         </div>
                         <p>{this.props.tweetText}</p>
+                        <div>
+                            <img src={this.props.media} alt="media" style={{height: "50%", width: "100%"}}></img>
+                        </div>
                     </div>
                     <div className="card-footer">
                         <div>

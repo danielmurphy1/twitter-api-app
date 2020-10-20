@@ -17,7 +17,8 @@ class Random extends React.Component{
             likesCount: "", 
             date: "", 
             time: "", 
-            tweetText: ""
+            tweetText: "", 
+            media: ""
         }
         this.handleClick = this.handleClick.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -44,8 +45,15 @@ class Random extends React.Component{
             likesCount: content[tweetNumber].favorite_count,
             date: dateString,
             time: timeString,
-            tweetText: content[tweetNumber].full_text
+            tweetText: content[tweetNumber].full_text,
+            media: (content[tweetNumber].entities.media) ? content[tweetNumber].entities.media[0].media_url_https : null
         })
+        // console.log(content[3].entities.media[0].media_url_https)
+        if(content[tweetNumber].entities.media){
+            console.log(content[tweetNumber].entities.media[0].media_url_https);
+        } else{
+            console.log("no media")
+        }
     }
 
     closeModal(){
@@ -83,6 +91,7 @@ class Random extends React.Component{
                     time={this.state.time}
                     likesCount={this.state.likesCount}
                     retweetCount={this.state.retweetCount}
+                    media={this.state.media}
                     />
             </div>
         )
