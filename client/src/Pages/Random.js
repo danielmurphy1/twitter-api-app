@@ -24,23 +24,9 @@ class Random extends React.Component{
     }
 
     async handleClick(userName, name){
-        this.setState({
-            isModal: true, 
-            userName: userName,
-            user: name, 
-            searchText: userName,
-            screenName: userName,
-        })
-       
         const content = await fetch(`/api/user/search?searchText=${userName}`)
             .then(res => res.json());
-        // console.log("card Clicked")
-        // console.log(this.state.userName)
-        // console.log(content.length);
         const tweetNumber = Math.floor(Math.random() * content.length);
-        // console.log(tweetNumber);
-        // console.log(content[tweetNumber]);
-        // console.log(content[tweetNumber].user.profile_image_url_https);
         let createdAtArray = content[tweetNumber].created_at.split(" ");
         let date = createdAtArray.slice(1,3);
         date.push(createdAtArray[5]);
@@ -48,6 +34,11 @@ class Random extends React.Component{
         let time = createdAtArray.slice(3,4);
         let timeString = time.join();
         this.setState({
+            isModal: true, 
+            userName: userName,
+            user: name, 
+            searchText: userName,
+            screenName: userName,
             image: content[tweetNumber].user.profile_image_url_https,
             retweetCount: content[tweetNumber].retweet_count,
             likesCount: content[tweetNumber].favorite_count,
@@ -55,8 +46,6 @@ class Random extends React.Component{
             time: timeString,
             tweetText: content[tweetNumber].full_text
         })
-    
-        console.log(this.state)
     }
 
     closeModal(){
