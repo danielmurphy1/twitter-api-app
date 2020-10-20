@@ -22,7 +22,7 @@ class TweetCard extends React.Component {
                         </div>
                         <p>{this.props.tweetText}</p>
                         <div>
-                            <img src={this.props.media} alt="media" style={{height: "50%", width: "100%"}}></img>
+                            {(this.props.media) ? <img src={this.props.media} alt="media" style={{height: "50%", width: "100%"}}></img> : null}
                         </div>
                     </div>
                     <div className="card-footer">

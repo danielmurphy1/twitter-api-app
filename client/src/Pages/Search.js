@@ -16,7 +16,8 @@ class Search extends React.Component{
             date: [], 
             time: [], 
             tweetText: [], 
-            searchText: ""
+            searchText: "",
+            media: []
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleContentSearch = this.handleContentSearch.bind(this);
@@ -44,6 +45,7 @@ class Search extends React.Component{
         const likesCountArray=[];
         const timesArray = [];
         const datesArray = [];
+        const mediaArray = [];
             
         const content = await fetch(`/api/tweet/search?searchText=${this.state.searchText}`)
             .then(res => res.json());
@@ -69,6 +71,7 @@ class Search extends React.Component{
             let time = createdAtArray.slice(3,4);
             let timeString = time.join();
             timesArray.push(timeString);
+            tweetData.entities.media ? mediaArray.push(tweetData.entities.media[0].media_url_https) : mediaArray.push(null);
 
             this.setState({
                 user: usersArray, 
@@ -78,7 +81,8 @@ class Search extends React.Component{
                 retweetCount: retweetCountArray, 
                 likesCount: likesCountArray,
                 date: datesArray,
-                time: timesArray
+                time: timesArray,
+                media: mediaArray
             })
             
             
@@ -86,7 +90,7 @@ class Search extends React.Component{
         this.setState({
             searchText: ""
         })
-        
+        console.log(mediaArray)
     }
 
     async handleUserSearch(event){
@@ -109,6 +113,7 @@ class Search extends React.Component{
         const likesCountArray=[];
         const timesArray = [];
         const datesArray = [];
+        const mediaArray = [];
             
         const content = await fetch(`/api/user/search?searchText=${this.state.searchText}`)
             .then(res => res.json());
@@ -134,6 +139,7 @@ class Search extends React.Component{
             let time = createdAtArray.slice(3,4);
             let timeString = time.join();
             timesArray.push(timeString);
+            tweetData.entities.media ? mediaArray.push(tweetData.entities.media[0].media_url_https) : mediaArray.push(null);
 
             this.setState({
                 user: usersArray, 
@@ -143,7 +149,8 @@ class Search extends React.Component{
                 retweetCount: retweetCountArray, 
                 likesCount: likesCountArray,
                 date: datesArray,
-                time: timesArray
+                time: timesArray,
+                media: mediaArray
             })
             
             
@@ -190,6 +197,7 @@ class Search extends React.Component{
                             likesCount={this.state.likesCount[i]}
                             date={this.state.date[i]}
                             time={this.state.time[i]}
+                            media={this.state.media[i]}
                             />
                     })}
                     
