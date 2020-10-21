@@ -85,12 +85,22 @@ class Search extends React.Component{
                 media: mediaArray
             })
             
+
+            if(tweetData.entities.hashtags.length > 0){
+                for(let hashtag of tweetData.entities.hashtags){
+                    tweetData.full_text.replace(`#${hashtag.text}`, `<a href="https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click">#${hashtag.text}</a>`);
+                    console.log("true")
+                    console.log(hashtag.text)
+                }
+            }
+            // console.log(tweetData.full_text)
+            // console.log(tweetData.entities.hashtags)
+            
             
         }
         this.setState({
             searchText: ""
         })
-        console.log(mediaArray)
     }
 
     async handleUserSearch(event){
