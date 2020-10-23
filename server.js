@@ -30,7 +30,7 @@ app.get("/api/user/search", (req, res) =>{
     console.log("usersearch")
     const searchText = req.query.searchText;
     //res.send("Hello");
-    axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${searchText}&count=5&tweet_mode=extended`, {
+    axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${searchText}&count=10&tweet_mode=extended`, {
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 

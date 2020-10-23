@@ -34,6 +34,37 @@ class Random extends React.Component{
         let dateString = date.join(" ");
         let time = createdAtArray.slice(3,4);
         let timeString = time.join();
+        
+
+        
+        for (const tweetData of content) {
+            
+            
+            if(tweetData.entities.hashtags.length > 0){
+                for(let hashtag of tweetData.entities.hashtags){
+                    tweetData.full_text = tweetData.full_text.replace(`#${hashtag.text}`, `<a href="https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click" target="_blank">#${hashtag.text}</a>`);
+                    console.log("true")
+                    console.log(hashtag.text)
+                }
+            }
+            if(tweetData.entities.urls.length > 0){
+                for(let url of tweetData.entities.urls){
+                    tweetData.full_text = tweetData.full_text.replace(`${url.url}`, `<a href="${url.url}" target="_blank">${url.display_url}</a>`);
+                }
+            }
+            if(tweetData.entities.user_mentions.length > 0){
+                for(let mentions of tweetData.entities.user_mentions)
+                tweetData.full_text = tweetData.full_text.replace(`@${mentions.screen_name}`, `<a href="https://twitter.com/${mentions.screen_name}" target="_blank">@${mentions.screen_name}</a>`);
+            }
+             //check if last url in text refers to the tweet itself - if so, deletes that URL
+            if(tweetData.full_text.includes("t.co")){
+                tweetData.full_text = tweetData.full_text.split(" ");
+                tweetData.full_text.pop();
+                tweetData.full_text = tweetData.full_text.join(" ");
+            }
+            
+        }
+
         this.setState({
             isModal: true, 
             userName: userName,
@@ -48,12 +79,10 @@ class Random extends React.Component{
             tweetText: content[tweetNumber].full_text,
             media: (content[tweetNumber].entities.media) ? content[tweetNumber].entities.media[0].media_url_https : null
         })
-        // console.log(content[3].entities.media[0].media_url_https)
-        if(content[tweetNumber].entities.media){
-            console.log(content[tweetNumber].entities.media[0].media_url_https);
-        } else{
-            console.log("no media")
-        }
+
+
+
+
     }
 
     closeModal(){

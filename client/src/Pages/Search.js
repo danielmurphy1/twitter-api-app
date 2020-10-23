@@ -4,6 +4,7 @@ import TweetCard from '../Components/TweetCard';
 import SearchForm from '../Components/SearchForm';
 import Axios from 'axios';
 
+
 class Search extends React.Component{
     constructor(){
         super();
@@ -60,7 +61,7 @@ class Search extends React.Component{
             usersArray.push(tweetData.user.name);
             screenNameArray.push(tweetData.user.screen_name);
             profileImageArray.push(tweetData.user.profile_image_url_https);
-            tweetTextArray.push(tweetData.full_text);
+            
             retweetCountArray.push(tweetData.retweet_count);
             likesCountArray.push(tweetData.favorite_count);
             let createdAtArray = tweetData.created_at.split(" ");
@@ -88,14 +89,29 @@ class Search extends React.Component{
 
             if(tweetData.entities.hashtags.length > 0){
                 for(let hashtag of tweetData.entities.hashtags){
-                    tweetData.full_text.replace(`#${hashtag.text}`, `<a href="https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click">#${hashtag.text}</a>`);
+                    tweetData.full_text = tweetData.full_text.replace(`#${hashtag.text}`, `<a href='https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click' target="_blank">#${hashtag.text}</a>`);
                     console.log("true")
                     console.log(hashtag.text)
                 }
             }
-            // console.log(tweetData.full_text)
-            // console.log(tweetData.entities.hashtags)
-            
+            if(tweetData.entities.urls.length > 0){
+                for(let url of tweetData.entities.urls){
+                    tweetData.full_text = tweetData.full_text.replace(`${url.url}`, `<a href="${url.url}" target="_blank">${url.display_url}</a>`);
+                }
+            }
+            if(tweetData.entities.user_mentions.length > 0){
+                for(let mentions of tweetData.entities.user_mentions)
+                tweetData.full_text = tweetData.full_text.replace(`@${mentions.screen_name}`, `<a href="https://twitter.com/${mentions.screen_name}" target="_blank">@${mentions.screen_name}</a>`);
+            }
+
+            console.log(tweetData.full_text)
+             //check if last url in text refers to the tweet itself - if so, deletes that URL
+            if(tweetData.full_text.includes("t.co")){
+                tweetData.full_text = tweetData.full_text.split(" ");
+                tweetData.full_text.pop();
+                tweetData.full_text = tweetData.full_text.join(" ");
+            }
+            tweetTextArray.push(tweetData.full_text);
             
         }
         this.setState({
@@ -138,7 +154,6 @@ class Search extends React.Component{
             usersArray.push(tweetData.user.name);
             screenNameArray.push(tweetData.user.screen_name);
             profileImageArray.push(tweetData.user.profile_image_url_https);
-            tweetTextArray.push(tweetData.full_text);
             retweetCountArray.push(tweetData.retweet_count);
             likesCountArray.push(tweetData.favorite_count);
             let createdAtArray = tweetData.created_at.split(" ");
@@ -163,6 +178,36 @@ class Search extends React.Component{
                 media: mediaArray
             })
             
+            
+            if(tweetData.entities.hashtags.length > 0){
+                for(let hashtag of tweetData.entities.hashtags){
+                    tweetData.full_text = tweetData.full_text.replace(`#${hashtag.text}`, `<a href='https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click' target="_blank">#${hashtag.text}</a>`);
+                    console.log("true")
+                    console.log(hashtag.text)
+                }
+            }
+            if(tweetData.entities.urls.length > 0){
+                for(let url of tweetData.entities.urls){
+                    tweetData.full_text = tweetData.full_text.replace(`${url.url}`, `<a href="${url.url}" target="_blank">${url.display_url}</a>`);
+                }
+            }
+            if(tweetData.entities.user_mentions.length > 0){
+                for(let mentions of tweetData.entities.user_mentions)
+                tweetData.full_text = tweetData.full_text.replace(`@${mentions.screen_name}`, `<a href="https://twitter.com/${mentions.screen_name}" target="_blank">@${mentions.screen_name}</a>`);
+            }
+            
+            
+            console.log(tweetData.full_text)
+            //check if last url in text refers to the tweet itself - if so, deletes that URL
+            if(tweetData.full_text.includes("t.co")){
+                tweetData.full_text = tweetData.full_text.split(" ");
+                tweetData.full_text.pop();
+                tweetData.full_text = tweetData.full_text.join(" ");
+            }
+
+
+            console.log(tweetData.full_text)
+            tweetTextArray.push(tweetData.full_text);
             
         }
         this.setState({

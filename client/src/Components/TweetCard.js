@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/tweetcard.css'
+import ReactHtmlParser from 'react-html-parser';
 
 class TweetCard extends React.Component {
     constructor(){
@@ -20,7 +21,7 @@ class TweetCard extends React.Component {
                                 <p><a href={`https://www.twitter.com/${this.props.screenName}`} target="_blank">@{this.props.screenName}</a></p>
                             </div>
                         </div>
-                        <p>{this.props.tweetText}</p>
+                        <p>{ReactHtmlParser(this.props.tweetText)}</p>
                         <div>
                             {(this.props.media) ? <img src={this.props.media} alt="media" style={{height: "50%", width: "100%"}}></img> : null}
                         </div>
