@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 function RandomCard(props) {
@@ -16,6 +15,5 @@ function RandomCard(props) {
         </div>
     )
 }
-
 
 export default RandomCard;

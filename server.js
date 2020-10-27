@@ -9,10 +9,7 @@ app.use("/search", express.static(path.join(__dirname, "client/build")));
 app.use("/random", express.static(path.join(__dirname, "client/build")));
 
 app.get("/api/tweet/search", (req, res) =>{
-    console.log("tweetsearch")
     const searchText = req.query.searchText;
-    //res.send("Hello");
-    console.log(searchText)
     axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchText}&result_type=popular&tweet_mode=extended`, {
         headers:{
             "Content-type": "application/json", 
@@ -22,14 +19,11 @@ app.get("/api/tweet/search", (req, res) =>{
     })
         .then((response) => {
             res.send(response.data);
-            //console.log(response.data)
         })
 });
 
 app.get("/api/user/search", (req, res) =>{
-    console.log("usersearch")
     const searchText = req.query.searchText;
-    //res.send("Hello");
     axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${searchText}&count=10&tweet_mode=extended`, {
         headers:{
             "Content-type": "application/json", 

@@ -45,5 +45,4 @@ class TweetCard extends React.Component {
     }
 }
 
-
 export default TweetCard;

@@ -12,5 +12,4 @@ function SearchForm(props){
     )
 }
 
-
 export default SearchForm;

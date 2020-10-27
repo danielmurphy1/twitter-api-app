@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 
 function Home(){
@@ -10,8 +9,7 @@ function Home(){
             <p>The search page allows the user to search by twitter user or by twitter topics.</p>
             <br/>
             <p>The random page allows the user to fetch a random tweet some from of my favorite twitter users.</p>
-        </div>
-   
+        </div>   
     )
 }
 

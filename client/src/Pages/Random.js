@@ -39,12 +39,10 @@ class Random extends React.Component{
         
         for (const tweetData of content) {
             
-            
+            //add hyperlinks for hashtags, urls, and user mentions   
             if(tweetData.entities.hashtags.length > 0){
                 for(let hashtag of tweetData.entities.hashtags){
                     tweetData.full_text = tweetData.full_text.replace(`#${hashtag.text}`, `<a href="https://twitter.com/hashtag/${hashtag.text}?src=hashtag_click" target="_blank">#${hashtag.text}</a>`);
-                    console.log("true")
-                    console.log(hashtag.text)
                 }
             }
             if(tweetData.entities.urls.length > 0){
@@ -62,7 +60,6 @@ class Random extends React.Component{
                 tweetData.full_text.pop();
                 tweetData.full_text = tweetData.full_text.join(" ");
             }
-            
         }
 
         this.setState({
@@ -79,10 +76,6 @@ class Random extends React.Component{
             tweetText: content[tweetNumber].full_text,
             media: (content[tweetNumber].entities.media) ? content[tweetNumber].entities.media[0].media_url_https : null
         })
-
-
-
-
     }
 
     closeModal(){
