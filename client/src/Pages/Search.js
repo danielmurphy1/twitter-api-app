@@ -69,7 +69,6 @@ class Search extends React.Component{
                 time: timesArray,
                 media: mediaArray
             })
-            
             //add hyperlinks for hashtags, urls, and user mentions
             if(tweetData.entities.hashtags.length > 0){
                 for(let hashtag of tweetData.entities.hashtags){
@@ -190,8 +189,10 @@ class Search extends React.Component{
             }
         return(
             <div className="container col-6">
-                <div className="container text-center text-box">
+                <div className="container text-center text-box mb-3">
                     <h3>Search Tweets by User or Content</h3>
+                    <br/>
+                    <p>Note - Private Accounts Cannot Be Searched</p>
                 </div>
                 <SearchForm 
                     searchText={this.state.searchText} 

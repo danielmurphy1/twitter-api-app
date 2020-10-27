@@ -3,26 +3,19 @@
   color: white;
   width: 50%;
   margin-top: 50px;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
-P{
-  font-size: 1.5rem;
+p{
+  font-size: 1.3rem !important;
 }
-
-/* .App-header {
-  background-color: hsl(145, 70%, 30%) !important;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;
 }
 
 body{
-  background-color: grey;
+  background-color: #9e9e9e;
+
 }
 
