@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tweeter-Grabberer - Twitter API Application
 
-## Available Scripts
+_Web Based Twitter API Search App using React.js, Node.js, Express.js, and Bootstrap_
 
-In the project directory, you can run:
+## Instructions
 
-### `npm start`
+To Download and Run Locally
+___
+1. Clone Code Locally from GitHub
+2. Run "npm i" in terminal to install packages and dependencies
+3. Run "npm run dev" in terminal to start application locally. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To Use Locally or Accessing at Below Link
+___
+The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweeter-Grabberer will return the most recent ten of that uerer's tweets. Users who have marked their accounts as "private" cannot be searched using Tweeter-Grabberer. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithim ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users, and will display a random tweet from that user's most recent ten tweets. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+Access the app [here]()
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/home.JPG)
 
-### `npm run build`
+![Search-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/searchJPG.JPG)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Random-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/random.JPG)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Random-Tweet ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/randomtweetJPG.JPG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Summary
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This application is my fifth using React, and my third in consuming an API. Additionally, this is my first application in creating and maintaining a backend. The backend in set up as an internal API that handles frontend requests, sends those requests to the Twitter API, receives the response data, and serves that data back to the frontend. This is my first full-stack application. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In creating this app, I learned how to work with Express and Node for the backend in order to create a full-stack application. Doing so was challenging, but it was also very rewarding to teach myself the basics of backend development. Moreover, as the Twitter API is more complicated than the previous API's with which I have worked (see StarWars API application and Brewery Database Application [here](https://github.com/danielmurphy1/star-wars-api) and[here](https://github.com/danielmurphy1/brewery-database-app), respectively), I also learned quite a bit more about requesting data from an external source, using PostMan, and navigating published documentation for external data sources so that I was able to get information that I needed. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Once again, for the styling, I mostly took advantage of the Bootstrap library, but also added some of my own custom styling for some components using CSS (and thus navigating and correcting Bootstrap and custom styling conflicts so that I received the desired styling outcomes.)
 
-## Learn More
+### Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Dan Murphy - Software Developer
