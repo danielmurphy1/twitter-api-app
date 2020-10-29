@@ -15,7 +15,7 @@ ___
 The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweeter-Grabberer will return the most recent ten of that uerer's tweets. Users who have marked their accounts as "private" cannot be searched using Tweeter-Grabberer. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithim ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users, and will display a random tweet from that user's most recent ten tweets. 
 
 
-Access the app [here]()
+Access the app [here](https://mighty-reaches-83026.herokuapp.com/)
 
 ![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/home.JPG)
 
@@ -33,7 +33,7 @@ This application is my fifth using React, and my third in consuming an API. Addi
 
 In creating this app, I learned how to work with Express and Node for the backend in order to create a full-stack application. Doing so was challenging, but it was also very rewarding to teach myself the basics of backend development. Moreover, as the Twitter API is more complicated than the previous API's with which I have worked (see StarWars API application and Brewery Database Application [here](https://github.com/danielmurphy1/star-wars-api) and[here](https://github.com/danielmurphy1/brewery-database-app), respectively), I also learned quite a bit more about requesting data from an external source, using PostMan, and navigating published documentation for external data sources so that I was able to get information that I needed. 
 
-Once again, for the styling, I mostly took advantage of the Bootstrap library, but also added some of my own custom styling for some components using CSS (and thus navigating and correcting Bootstrap and custom styling conflicts so that I received the desired styling outcomes.)
+For the styling, I mostly took advantage of the Bootstrap library, but also added some of my own custom styling for some components using CSS (and thus navigating and correcting Bootstrap and custom styling conflicts so that I received the desired styling outcomes.)
 
 ### Author
 
