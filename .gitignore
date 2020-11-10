@@ -23,6 +23,7 @@
 .env.production.local
 .env
 server2.js
+server3.js
 
 npm-debug.log*
 yarn-debug.log*
