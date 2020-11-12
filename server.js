@@ -3,10 +3,42 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
 const axios = require("axios");
+require("dotenv").config();
 
 app.use("/", express.static(path.join(__dirname, "client/build")));
 app.use("/search", express.static(path.join(__dirname, "client/build")));
 app.use("/random", express.static(path.join(__dirname, "client/build")));
+
+const getToken = async () => {
+    return await axios.post("https://api.twitter.com/oauth2/token",
+    {
+        auth: {
+            username: process.env.TWITTER_API_KEY, 
+            password: process.env.TWTITTER_SECRET_KEY
+        }, 
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", 
+            Accept: "application/json"
+        },
+        responseType: "application/json",
+    })
+    .then(response => {
+        return response.data;
+    })
+    .catch(err => {
+        console.log(err.response);
+    });
+}
+
+let tokenKey;
+let token = getToken();
+token.then(result => {
+    tokenKey = result.access_token;
+    console.log(tokenKey);
+    })
+    .catch(err => {
+    console.log(err);
+});
 
 app.get("/api/tweet/search", (req, res) =>{
     const searchText = req.query.searchText;
@@ -14,7 +46,7 @@ app.get("/api/tweet/search", (req, res) =>{
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
-            "Authorization": "Bearer" + " " + "AAAAAAAAAAAAAAAAAAAAADQoIgEAAAAAy6zzchbqvwvhN2rAv8OjfwBMxeY%3DTjVDGcXCkrGtUXCvFDQZRVmgq5Tg2ZScnPQ1Zx3kY6Opwk6Q7i"
+            "Authorization": "Bearer" + " " + tokenKey 
         }
     })
         .then((response) => {
@@ -28,7 +60,7 @@ app.get("/api/user/search", (req, res) =>{
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
-            "Authorization": "Bearer" + " " + "AAAAAAAAAAAAAAAAAAAAADQoIgEAAAAAy6zzchbqvwvhN2rAv8OjfwBMxeY%3DTjVDGcXCkrGtUXCvFDQZRVmgq5Tg2ZScnPQ1Zx3kY6Opwk6Q7i"
+            "Authorization": "Bearer" + " " + token
         }
     })
         .then((response) => {
