@@ -10,11 +10,11 @@ app.use("/search", express.static(path.join(__dirname, "client/build")));
 app.use("/random", express.static(path.join(__dirname, "client/build")));
 
 const getToken = async () => {
-    return await axios.post("https://api.twitter.com/oauth2/token",
+    return await axios.post("https://api.twitter.com/oauth2/token", 'grant_type=client_credentials', 
     {
         auth: {
             username: process.env.TWITTER_API_KEY, 
-            password: process.env.TWTITTER_SECRET_KEY
+            password: process.env.TWITTER_SECRET_KEY
         }, 
         headers: {
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", 
@@ -60,7 +60,7 @@ app.get("/api/user/search", (req, res) =>{
         headers:{
             "Content-type": "application/json", 
             "Accept": "application/json", 
-            "Authorization": "Bearer" + " " + token
+            "Authorization": "Bearer" + " " + tokenKey
         }
     })
         .then((response) => {

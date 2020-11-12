@@ -15,13 +15,13 @@ const randomData = [
         id: 3, 
         name: "HISTORY", 
         userName: "HISTORY", 
-        url: "https://pbs.twimg.com/profile_images/1313910043507675142/Xg1_2pAy_normal.jpg"
+        url: "https://pbs.twimg.com/profile_images/1323296791060729856/knWLBrkl_normal.jpg"
     },
     {
         id: 4, 
         name: "Pitt Football", 
         userName: "Pitt_FB", 
-        url: "https://pbs.twimg.com/profile_images/1310573728691113993/ufk_T4tS_normal.jpg"
+        url: "https://pbs.twimg.com/profile_images/1320401173237669888/RmRsvQs4_normal.jpg"
     },
     {
         id: 5, 

@@ -7,8 +7,11 @@ _Web Based Twitter API Search App using React.js, Node.js, Express.js, and Boots
 To Download and Run Locally
 ___
 1. Clone Code Locally from GitHub
-2. Run "npm i" in terminal to install packages and dependencies
-3. Run "npm run dev" in terminal to start application locally. 
+2. Cd into application directory
+3. Change name of ".sample.env" file to ".env"
+4. Insert your Twitter API Key and Twitter Secret Key into the .env file
+5. Run "npm i" in terminal to install packages and dependencies
+6. Run "npm run dev" in terminal to start application locally. 
 
 To Use Locally or Accessing at Below Link
 ___
