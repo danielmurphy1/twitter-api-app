@@ -2,23 +2,6 @@
 
 _Web Based Twitter API Search App using React.js, Node.js, Express.js, and Bootstrap_
 
-## Instructions
-
-To Download and Run Locally
-___
-1. Clone Code Locally from GitHub
-2. CD into application directory
-3. Change name of ".sample.env" file to ".env"
-4. Insert your Twitter API Key and Twitter Secret Key into the .env file
-5. Run "npm install" (or "npm i") in terminal to install packages and dependencies
-6. Run "npm run dev" in terminal to start application locally. 
-
-To Use Locally or Accessing at Below Link
-___
-The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweeter-Grabberer will return the most recent ten of that user's tweets. Users who have marked their accounts as "private" cannot be searched using Tweeter-Grabberer. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithm ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users and will display a random tweet from that user's most recent ten tweets. 
-
-
-Access the app [here](https://mighty-reaches-83026.herokuapp.com/)
 
 ![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/home.JPG)
 
@@ -29,6 +12,23 @@ Access the app [here](https://mighty-reaches-83026.herokuapp.com/)
 ![Random-Tweet ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/randomtweetJPG.JPG)
 
 
+## Instructions
+
+To Download and Run Locally
+
+1. Clone Code Locally from GitHub
+2. CD into application directory
+3. Change name of ".sample.env" file to ".env"
+4. Insert your Twitter API Key and Twitter Secret Key into the .env file
+5. Run "npm install" (or "npm i") in terminal to install packages and dependencies
+6. Run "npm run dev" in terminal to start application locally. 
+
+To Use Locally or Accessing at Below Link
+
+The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweeter-Grabberer will return the most recent ten of that user's tweets. Users who have marked their accounts as "private" cannot be searched using Tweeter-Grabberer. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithm ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users and will display a random tweet from that user's most recent ten tweets. 
+
+
+Access the app [here](https://mighty-reaches-83026.herokuapp.com/)
 
 ### Summary
 
