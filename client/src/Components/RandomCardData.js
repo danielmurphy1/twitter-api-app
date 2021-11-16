@@ -21,7 +21,7 @@ const randomData = [
         id: 4, 
         name: "Pitt Football", 
         userName: "Pitt_FB", 
-        url: "https://pbs.twimg.com/profile_images/1320401173237669888/RmRsvQs4_normal.jpg"
+        url: "https://pbs.twimg.com/profile_images/1452999467620315138/1oGiwy4A_normal.jpg"
     },
     {
         id: 5, 

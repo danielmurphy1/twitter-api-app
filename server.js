@@ -34,7 +34,6 @@ let tokenKey;
 let token = getToken();
 token.then(result => {
     tokenKey = result.access_token;
-    console.log(tokenKey);
     })
     .catch(err => {
     console.log(err);
