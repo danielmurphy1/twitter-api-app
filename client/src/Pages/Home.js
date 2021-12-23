@@ -4,7 +4,7 @@ function Home(){
     return(
         <div className="container text-center">
             <div className="container text-center text-box">
-                <h1>Tweeter-Grabberer</h1>
+                <h1>Tweet Grabber</h1>
                 <p>This application allows the user to search tweets from the Twitter API.  </p>
                 <br/>
                 <p>The search page allows the user to search by Twitter user-name or by Twitter topics.</p>

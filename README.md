@@ -1,4 +1,4 @@
-# Tweeter-Grabberer - Twitter API Application
+# Tweet-Grabber - Twitter API Application
 
 _Web Based Twitter API Search App using React.js, Node.js, Express.js, and Bootstrap_
 
@@ -25,7 +25,7 @@ To Download and Run Locally
 
 To Use Locally or Accessing at Below Link
 
-The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweeter-Grabberer will return the most recent ten of that user's tweets. Users who have marked their accounts as "private" cannot be searched using Tweeter-Grabberer. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithm ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users and will display a random tweet from that user's most recent ten tweets. 
+The search page can be used to search for tweets by either content or by username, using the corresponding button to search. When searching by username, input a valid Twitter username (omitting the "@" symbol), and Tweet-Grabber will return the most recent ten of that user's tweets. Users who have marked their accounts as "private" cannot be searched using Tweet-Grabber. To search by content, type a content that you would like to search (ie. World Series, PS5, Simpsons). The fifteen most popular tweets (as determined by the Twitter algorithm ) about that content will be displayed. The random page will allow the user to choose one of my five favorite Twitter users and will display a random tweet from that user's most recent ten tweets. 
 
 
 Access the app [here](https://mighty-reaches-83026.herokuapp.com/)
