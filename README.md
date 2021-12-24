@@ -3,7 +3,7 @@
 _Web Based Twitter API Search App using React.js, Node.js, Express.js, and Bootstrap_
 
 
-![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/twitter.JPG)
+![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/twitter.jpg)
 
 ![Search-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/searchJPG.JPG)
 
