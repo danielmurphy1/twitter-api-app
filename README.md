@@ -2,6 +2,10 @@
 
 _Web Based Twitter API Search App using React.js, Node.js, Express.js, and Bootstrap_
 
+## DUE TO CHANGES TO THE ACCESS LEVELS OF THE TWITTER API, THIS APPLICATION NO LONGER OPERATES
+
+The Free Tier of access to the Twitter API does not allow the searching of tweets any longer. 
+
 
 ![Home-Page ScreenShot](https://github.com/danielmurphy1/twitter-api-app/blob/main/client/src/images/twitter.jpg)
 
